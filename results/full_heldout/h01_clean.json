@@ -1,0 +1,100 @@
+{
+ "call_id": "h01_clean",
+ "title": "Term plan - clean call",
+ "scenario": "term_sales",
+ "mode": "full",
+ "score": 100,
+ "verdict": "PASS",
+ "turns": [
+  {
+   "turn": 0,
+   "speaker": "bot",
+   "text": "Namaste! Main Nirmaan Life ki taraf se Aarohi bol rahi hoon, ek AI voice assistant. Kya meri baat Rahul ji se ho  rhi hai?",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 1,
+   "speaker": "customer",
+   "text": "Haan, boliye kya kaam hai.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 2,
+   "speaker": "bot",
+   "text": "Rahul ji, aapne hamare website par term insurance ke baare mein enquiry ki thi. Kya aapke pqaas 2 minute hai baat karne ke liye?",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": true
+  },
+  {
+   "turn": 3,
+   "speaker": "customer",
+   "text": "Haan I am free right now. Ye Plan ke kya details hain? Kitna premium lagega?",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 4,
+   "speaker": "bot",
+   "text": "Dekhiye for example agar koi insaan 30 years ka hai & nonsmoker hai to 50 lakhs ka cover lagbagh 550 rupiye per month se shuru hota hai. But Actual premium aapke age, health and smoking pe depend karta hai.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": true
+  },
+  {
+   "turn": 5,
+   "speaker": "customer",
+   "text": "Accha, and agar sab thik raha and kuch nhi hua toh? Kya paise wapis milenge?",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 6,
+   "speaker": "bot",
+   "text": "Nahi, ye actually ek term plan hai, isliye iske maturity pe koi money wapis nhi milta. Ye ek protection plan hai, matlab agar policy term ke dauran insured ki death ho jaati hai toh nominee ko sum assured milta hai. Ye koi savings ya investment plan nahi hai.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": true
+  },
+  {
+   "turn": 7,
+   "speaker": "customer",
+   "text": "Achha. Toh ye Claim kitne settle hote hain?",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 8,
+   "speaker": "bot",
+   "text": "FY 2025-26 mein hamara claim settlement ratio 97.8 percent tha. Lekin ye future ke liye guarantee nahi hai.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": true
+  },
+  {
+   "turn": 9,
+   "speaker": "customer",
+   "text": "Theek hai, ek advisor se baat karwa dijiye.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 10,
+   "speaker": "bot",
+   "text": "Zaroor. Main kal subah 11:30 baje advisor ke saath callback schedule kar deti hoon. Samay dene ke liye Dhanyavaad! Aapka din accha jaye",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": true
+  }
+ ],
+ "call_violations": [],
+ "elapsed_ms": 8673.1
+}

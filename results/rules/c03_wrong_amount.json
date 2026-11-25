@@ -1,0 +1,84 @@
+{
+ "call_id": "c03_wrong_amount",
+ "title": "Collections - wrong EMI amount and late fee",
+ "scenario": "collections",
+ "mode": "rules",
+ "score": 100,
+ "verdict": "PASS",
+ "turns": [
+  {
+   "turn": 0,
+   "speaker": "bot",
+   "text": "Namaste, main Udaan Finserv ki taraf se Kavya bol rahi hoon, ek AI assistant. Kya main Priya ji se baat kar rahi hoon?",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 1,
+   "speaker": "customer",
+   "text": "Haan, main Priya bol rahi hoon.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 2,
+   "speaker": "bot",
+   "text": "Dhanyavaad Priya ji. Aapki 18,450 rupaye ki EMI 5 November ko due thi aur 12 din se pending hai.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 3,
+   "speaker": "customer",
+   "text": "Itni zyada? Mujhe toh kam yaad hai.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 4,
+   "speaker": "bot",
+   "text": "Ji, ye amount aapke account mein dikh raha hai.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 5,
+   "speaker": "customer",
+   "text": "Late fee kitni lagegi?",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 6,
+   "speaker": "bot",
+   "text": "Overdue EMI par 10 percent per month late charge lagta hai.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 7,
+   "speaker": "customer",
+   "text": "Achha.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 8,
+   "speaker": "bot",
+   "text": "Main aapko payment link SMS kar deti hoon. Dhanyavaad.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  }
+ ],
+ "call_violations": [],
+ "elapsed_ms": 0.9
+}

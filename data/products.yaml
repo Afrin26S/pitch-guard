@@ -1,0 +1,73 @@
+# FICTIONAL products. No real insurer, bank or brand data is used anywhere in this project.
+# `ranges` lets a number anywhere inside a published range count as correct.
+# Every other number in a fact's text is picked up automatically by the number parser.
+products:
+  term_shield:
+    name: Suraksha Term Shield (fictional product of Nirmaan Life)
+    facts:
+      - id: term.type
+        text: "Suraksha Term Shield is a pure term life insurance plan. It pays the sum assured to the nominee if the life insured dies during the policy term. It is not a savings or investment plan and has no maturity benefit, no returns and no bonus."
+      - id: term.cover
+        text: "Sum assured options range from ₹25 lakh to ₹5 crore."
+        ranges: [[2500000, 50000000]]
+      - id: term.premium
+        text: "Illustrative premium: ₹549 per month for ₹50 lakh cover for a 30-year-old non-smoker with a 30-year policy term. The actual premium depends on age, smoking status, health, cover amount and policy term."
+      - id: term.entry
+        text: "Entry age is 18 to 60 years. Maximum age at end of cover is 75 years."
+        ranges: [[18, 60]]
+      - id: term.tenure
+        text: "Policy term ranges from 10 to 40 years."
+        ranges: [[10, 40]]
+      - id: term.medical
+        text: "Medical tests are required for cover above ₹1 crore or for applicants above 45 years of age. Final acceptance is at the insurer's underwriting discretion."
+      - id: term.claims
+        text: "Claim settlement ratio for FY 2025-26 was 97.8% (illustrative figure for this fictional insurer). Past ratios do not guarantee future claim outcomes."
+      - id: term.exclusions
+        text: "Death by suicide within the first 12 months of the policy is not covered; only a limited refund of premiums applies. Claims can be rejected for non-disclosure of material facts such as smoking or existing illness."
+      - id: term.freelook
+        text: "Free-look period is 30 days from receipt of the policy documents; the policy can be cancelled within this period for a refund subject to deductions."
+      - id: term.offers
+        text: "Premium rates are standard for all customers. There is no limited-time discount, no deadline offer and no price rise linked to the day of purchase."
+      - id: term.tax
+        text: "Premiums may qualify for tax deduction under Section 80C and the death benefit may be tax-exempt under Section 10(10D), subject to prevailing tax laws. Customers should confirm with a tax advisor."
+      - id: term.riders
+        text: "Optional riders (accidental death benefit, critical illness cover) are available at extra premium. No health checkup or hospital cover is included in the base plan."
+
+  quickcash_loan:
+    name: QuickCash Personal Loan (fictional product of Udaan Finserv)
+    facts:
+      - id: loan.amount
+        text: "Loan amounts range from ₹50,000 to ₹10,00,000."
+        ranges: [[50000, 1000000]]
+      - id: loan.rate
+        text: "Interest rate ranges from 13% to 24% per annum on a reducing-balance basis. The rate offered depends on the applicant's credit profile."
+        ranges: [[13, 24]]
+      - id: loan.tenure
+        text: "Tenure ranges from 6 to 60 months."
+        ranges: [[6, 60]]
+      - id: loan.fee
+        text: "Processing fee is 2% of the loan amount plus GST, deducted at the time of disbursal. There is no fee waiver."
+      - id: loan.approval
+        text: "Approval is subject to credit assessment (including a credit bureau check) and document verification. Approval is never guaranteed."
+      - id: loan.docs
+        text: "Required documents: Aadhaar, PAN, last 3 months' bank statement, and salary slips or other income proof."
+      - id: loan.disbursal
+        text: "After approval, the amount is disbursed within 24 to 48 hours."
+        ranges: [[24, 48]]
+      - id: loan.eligibility
+        text: "Eligibility: age 21 to 58 years, minimum monthly income ₹25,000, resident of India."
+        ranges: [[21, 58]]
+      - id: loan.foreclosure
+        text: "Foreclosure is allowed after 6 months with a charge of 4% of the outstanding principal."
+      - id: loan.offers
+        text: "Interest rates are set by credit profile and are not tied to any limited-time offer or same-day decision."
+      - id: loan.collateral
+        text: "The loan is unsecured. No collateral or guarantor is required."
+      - id: loan.late
+        text: "Late payment charge is 2% per month on the overdue EMI amount. Overdue payments may be reported to credit bureaus."
+      - id: loan.collections
+        text: "Overdue reminders are sent by call and SMS only between 8 AM and 7 PM. A written legal notice is considered only after 90 days of non-payment. The company never discusses the loan with anyone other than the borrower, never visits relatives or workplaces, and never threatens the borrower."
+      - id: loan.paychannels
+        text: "Payments are accepted only through the Udaan app, UPI link, net banking or branch. Cash is never collected by agents."
+      - id: loan.hardship
+        text: "Borrowers facing hardship can request an EMI date change or restructuring through the branch or the helpline."

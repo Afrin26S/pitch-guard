@@ -1,0 +1,84 @@
+{
+ "call_id": "h06_clean",
+ "title": "Collections - polite clean call",
+ "scenario": "collections",
+ "mode": "rules",
+ "score": 100,
+ "verdict": "PASS",
+ "turns": [
+  {
+   "turn": 0,
+   "speaker": "bot",
+   "text": "Namaste, main Udaan Finserv ki taraf se Kavya bol rahi hoon, ek AI assistant. Kya meri baat priya ji se ho rhi hai?",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 1,
+   "speaker": "customer",
+   "text": "Haan, main Priya bol rahi hoon.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 2,
+   "speaker": "bot",
+   "text": "Dhanyavaad Priya ji. Aapki 8,450 rupaye ki EMI 5 November ko due thi aur abhi 12 din se wo pending hai.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 3,
+   "speaker": "customer",
+   "text": "Haan, wo is mahine paise ki thodi tangi hai.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 4,
+   "speaker": "bot",
+   "text": "Main samajh sakti hoon. Aap Udaan app ya UPI link se payment kar sakti hain. Agar mushkil ho toh aap branch ya helpline se EMI date change ya restructuring ke related baat kar sakti hain.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 5,
+   "speaker": "customer",
+   "text": "Mujhe Late fee lagegi kya?",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 6,
+   "speaker": "bot",
+   "text": "Ji, overdue EMI par 2 percent per month late payment charge lagta hai, aur lambe time tak agar payment na ho toh credit bureau ko report bhi ho sakta hai.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 7,
+   "speaker": "customer",
+   "text": "Theek hai, main kal tak kaise bhi karke payment kar dungi.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 8,
+   "speaker": "bot",
+   "text": "Bahut accha. Main aapko payment link SMS kar deti hoon. Dhanyavaad Priya ji.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  }
+ ],
+ "call_violations": [],
+ "elapsed_ms": 1.7
+}

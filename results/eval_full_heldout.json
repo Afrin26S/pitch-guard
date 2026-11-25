@@ -1,0 +1,24 @@
+{
+ "mode": "full",
+ "model": "openai/gpt-oss-120b",
+ "calls": 6,
+ "planted_violations": 4,
+ "detected": 4,
+ "label_recall": 1.0,
+ "clean_bot_turns": 27,
+ "clean_turns_flagged": 0,
+ "clean_turn_fp_rate": 0.0,
+ "per_category": {
+  "FALSE_CLAIM": {
+   "detected": 3,
+   "planted": 3
+  },
+  "NUMBER_MISMATCH": {
+   "detected": 1,
+   "planted": 1
+  }
+ },
+ "missed": [],
+ "false_positives": [],
+ "extra_flags_to_review": []
+}

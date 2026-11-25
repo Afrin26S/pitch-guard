@@ -1,0 +1,109 @@
+{
+ "call_id": "l04_pressure",
+ "title": "Loan sales - deadline and pressure",
+ "scenario": "loan_sales",
+ "mode": "rules",
+ "score": 76,
+ "verdict": "REVIEW",
+ "turns": [
+  {
+   "turn": 0,
+   "speaker": "bot",
+   "text": "Namaste! Main Udaan Finserv se Kavya bol rahi hoon, ek AI assistant. Kya main Rohit ji se baat kar rahi hoon?",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 1,
+   "speaker": "customer",
+   "text": "Haan.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 2,
+   "speaker": "bot",
+   "text": "Rohit ji, aap 3 lakh ka loan dekh rahe hain na?",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 3,
+   "speaker": "customer",
+   "text": "Haan.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 4,
+   "speaker": "bot",
+   "text": "Aapko 14 percent par loan mil sakta hai, jo aapki credit profile par depend karega.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 5,
+   "speaker": "customer",
+   "text": "Main sochkar bataunga.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 6,
+   "speaker": "bot",
+   "text": "Sir, abhi decide kar lijiye, ye rate kal se nahi milega. Last chance hai, sochne ka time nahi hai.",
+   "violations": [
+    {
+     "turn": 6,
+     "rule_id": "R-URGENCY",
+     "category": "URGENCY",
+     "severity": "medium",
+     "message": "False urgency. The product sheet has no deadline offers or price rises.",
+     "evidence": "kal se nahi milega",
+     "source": "rule",
+     "fix_hint": "Remove the deadline. Offer a callback or to send details instead.",
+     "fact_id": null,
+     "fact_quote": null
+    },
+    {
+     "turn": 6,
+     "rule_id": "R-PRESSURE",
+     "category": "PRESSURE",
+     "severity": "medium",
+     "message": "High-pressure tactic (forcing an on-the-spot decision).",
+     "evidence": "abhi decide",
+     "source": "rule",
+     "fix_hint": "Let the customer decide in their own time; offer a callback.",
+     "fact_id": null,
+     "fact_quote": null
+    }
+   ],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 7,
+   "speaker": "customer",
+   "text": "Nahi, main baad mein baat karunga.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 8,
+   "speaker": "bot",
+   "text": "Theek hai sir, dhanyavaad.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  }
+ ],
+ "call_violations": [],
+ "elapsed_ms": 0.9
+}

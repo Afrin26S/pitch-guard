@@ -1,0 +1,81 @@
+{
+ "call_id": "l03_wrong_rate_fee",
+ "title": "Loan sales - understates rate, no profile disclosure",
+ "scenario": "loan_sales",
+ "mode": "rules",
+ "score": 88,
+ "verdict": "REVIEW",
+ "turns": [
+  {
+   "turn": 0,
+   "speaker": "bot",
+   "text": "Namaste! Main Udaan Finserv se Kavya bol rahi hoon, ek AI assistant. Kya main Rohit ji se baat kar rahi hoon?",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 1,
+   "speaker": "customer",
+   "text": "Haan.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 2,
+   "speaker": "bot",
+   "text": "Rohit ji, aap kitne ka loan lena chahte hain?",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 3,
+   "speaker": "customer",
+   "text": "3 lakh. Byaj kitna lagega?",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 4,
+   "speaker": "bot",
+   "text": "Hamare loan par interest sirf 9 percent hai aur processing fee bilkul zero hai.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 5,
+   "speaker": "customer",
+   "text": "Achha.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 6,
+   "speaker": "bot",
+   "text": "Theek hai, aap bas ye form bhar dijiye.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  }
+ ],
+ "call_violations": [
+  {
+   "turn": null,
+   "rule_id": "D-LOAN-RATE",
+   "category": "MISSING_DISCLOSURE",
+   "severity": "medium",
+   "message": "A quoted interest rate must be accompanied by a statement that the final rate depends on the credit profile.",
+   "evidence": "",
+   "source": "rule",
+   "fix_hint": "A quoted interest rate must be accompanied by a statement that the final rate depends on the credit profile.",
+   "fact_id": null,
+   "fact_quote": null
+  }
+ ],
+ "elapsed_ms": 1.0
+}

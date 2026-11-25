@@ -1,0 +1,116 @@
+# ILLUSTRATIVE rules written for this demo. Not legal advice.
+# Verify against current TRAI / RBI / IRDAI text before relying on any of it.
+# All regexes are case-insensitive. `patterns` always fire. `soft_patterns` are skipped when a
+# negation word sits next to them ("guarantee nahi hai" is a compliant sentence).
+negation: '(?<![a-z])(nahi|nahin|nhi|not|no|never|without|nai|na)(?![a-z])|नहीं|नही|मत'
+
+call_hours:            # allowed local call window per scenario (HH:MM, 24h)
+  term_sales: ["09:00", "21:00"]
+  loan_sales: ["09:00", "21:00"]
+  collections: ["08:00", "19:00"]
+
+ai_disclosure:
+  within_bot_turns: 2
+  fix_hint: "Disclose in the opening line that this is an AI / automated assistant."
+  patterns:
+    - '\b(ai|a\.i\.|artificial intelligence|virtual (assistant|agent)|digital (assistant|agent)|voice (assistant|bot)|automated|chatbot|bot|robot|computer[- ]generated|machine)\b'
+    - 'एआई|वर्चुअल असिस्टेंट|डिजिटल असिस्टेंट|रोबोट|ऑटोमेटेड'
+
+identity_before_debt:
+  scenarios: [collections]
+  fix_hint: "Confirm you are speaking to the borrower before mentioning any amount or due date."
+  debt_patterns:
+    - '\b(emi|overdue|baaki|bakaya|pending|outstanding|due|installment|kisht)\b'
+    - '₹'
+    - '\b(rs|inr)\b'
+    - '\brupa\w*'
+    - '\brupee\w*'
+  confirm_patterns:
+    - '^\W*(ji|haan|han|ha|yes|yeah|yep|speaking|boliye|bol\s+(raha|rahi)|main\s+(hi\s+)?(bol|hoon|hun))\b'
+
+required_disclosures:
+  term_sales:
+    - id: D-TERM-PREMIUM
+      text: "A quoted premium must be accompanied by a statement that it depends on age, health, smoking status or cover."
+      trigger: '\bpremium\b'
+      satisfied_by: '\b(age|umar|umr|health|sehat|smok|depend|nirbhar|vary|alag|profile)\w*'
+  loan_sales:
+    - id: D-LOAN-RATE
+      text: "A quoted interest rate must be accompanied by a statement that the final rate depends on the credit profile."
+      trigger: '\b(interest|byaj|byaaj|rate|roi)\b|%|percent'
+      satisfied_by: '\b(depend|nirbhar|profile|credit|cibil|eligib|subject to)\w*'
+
+turn_rules:
+  - id: R-HUMAN
+    category: AI_DISCLOSURE
+    severity: critical
+    message: "Bot claims to be human / denies being an AI."
+    fix_hint: "Never deny being an AI. Say: 'Main ek AI assistant hoon.'"
+    patterns:
+      - '\bmain\s+(ek\s+)?(real\s+|asli\s+)?(insaan|insan|human|person|aadmi|ladki|ladka)\b'
+      - '\b(robot|bot|ai|machine)\s+(nahi|nahin|nhi)\b'
+      - '\bnot\s+(a\s+|an\s+)?(robot|bot|ai|machine)\b'
+      - '\bi\s+am\s+(a\s+|an\s+)?(real\s+|actual\s+)?(human|person)\b'
+
+  - id: R-GUARANTEE
+    category: GUARANTEE
+    severity: high
+    message: "Guarantee / risk-free language that the approved product sheet does not allow."
+    fix_hint: "Remove guarantee wording. Say outcomes depend on policy / loan terms and eligibility."
+    patterns:
+      - 'risk[\s-]*free'
+      - '\b(koi|kisi)\s+(bhi\s+)?(risk|jokhim|jokham)\s+(nahi|nahin|nhi)\b'
+      - '\b(no|zero)\s+risk\b'
+      - '\b100\s*(%|percent|pratishat)\s*(safe|secure|guarantee|guaranteed|approval|approved|pakka|sure|certain|surakshit|returns?)'
+      - '\b(pakka|pakki|confirm|sure)\s*(hi\s*)?(approve|approved|approval|sanction|mil\s*jayega|mil\s*jaayega|milega)\b'
+      - '\b(approval|approve|loan|claim)\s+(pakka|pakki)\b'
+      - '\bsure[\s-]*shot\b'
+      - '\bbilkul\s+safe\b'
+      - 'कोई\s*(भी\s*)?(रिस्क|जोखिम)\s*(नहीं|नही)'
+      - '(पक्का|पक्की)\s*(अप्रूव|मंज़ूर|मंजूर|मिल)'
+      - '(लोन|अप्रूवल)\s*(पक्का|पक्की)'
+      - 'रिस्क\s*फ्री'
+    soft_patterns:
+      - '\bgu?aa?ran?t(?:ee|y|i|eed|ied)\b'
+      - 'गारंटी|गारण्टी'
+      - '\bassured\s+(returns?|approval|benefit)'
+
+  - id: R-URGENCY
+    category: URGENCY
+    severity: medium
+    message: "False urgency. The product sheet has no deadline offers or price rises."
+    fix_hint: "Remove the deadline. Offer a callback or to send details instead."
+    patterns:
+      - '\b(sirf|only|bas)\s+(aaj|today)\b'
+      - '\b(aaj|today)\s+(hi|only)\s+(le|lo|lijiye|kar|apply|book|buy|kharid|khareed|purchase|sign|decide|payment|confirm|register)\w*'
+      - '\bkal\s+se\b.{0,40}\b(mehng|costly|badh|increase|nahi\s+milega|nahin\s+milega)\w*'
+      - '\b(rate|premium|price)\b.{0,30}\b(badh|increase|mehng)\w*\s+(jayega|jaayega|jaega|ho\s+jayega)'
+      - '\b(offer|discount|rate|deal)\b.{0,40}\b(khatam|band\s+ho|nahi\s+milega|nahin\s+milega)\b'
+    soft_patterns:
+      - '\blimited[\s-]*time\b'
+      - '\blast\s+chance\b'
+      - '\boffer\b.{0,25}\b(expire|expires|ends|end\s+ho|close|closes)\b'
+
+  - id: R-PRESSURE
+    category: PRESSURE
+    severity: medium
+    message: "High-pressure tactic (forcing an on-the-spot decision)."
+    fix_hint: "Let the customer decide in their own time; offer a callback."
+    patterns:
+      - '\b(abhi|turant|isi\s+waqt|right\s+now)\s+(decide|faisla|haan\s+bol|confirm|payment\s+kar|book\s+kar|le\s+lijiye|le\s+lo)\w*'
+      - '\bsochne\s+(ka|ke)\s+(time|waqt)\s+(nahi|nahin)'
+      - '\bpachta(o|oge|yenge|ega)\b'
+      - '\bmauka\b.{0,20}\b(haath\s+se|nikal|chala)'
+
+  - id: R-THREAT
+    category: THREAT
+    severity: critical
+    message: "Threat, shaming or third-party pressure in a collections call."
+    fix_hint: "Never threaten. State the due amount, the late charge from the product sheet, and offer payment or hardship options."
+    patterns:
+      - '\b(police|pulis|thana|thane)\b'
+      - '\b(jail|jel|arrest|giraftar|girftar|fir|warrant)\b'
+      - '\bghar\s+(par\s+|pe\s+)?(aa\s*jayenge|aayenge|aa\s*jaayenge|aa\s*jayege|log\s+bhej)'
+      - '\b(ghar\s*wale|ghar\s*walon|gharwalon|family|parivar|rishtedar|rishtedaaron|padosi|padosiyon|neighbou?rs?|colleagues?|boss|manager)\b.{0,40}\b(bata|batayenge|bataunga|batayega|batadenge|inform|call|pata)\w*'
+      - '\b(badnaam|badnami|izzat|beizzati|naam\s+kharab|blacklist|dhamki|zabt|kurk|seize)\w*'
+      - 'पुलिस|जेल|गिरफ्तार|बदनाम|इज्जत|इज़्ज़त'

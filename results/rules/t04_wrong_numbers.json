@@ -1,0 +1,84 @@
+{
+ "call_id": "t04_wrong_numbers",
+ "title": "Term plan - wrong premium and medical limit",
+ "scenario": "term_sales",
+ "mode": "rules",
+ "score": 100,
+ "verdict": "PASS",
+ "turns": [
+  {
+   "turn": 0,
+   "speaker": "bot",
+   "text": "Namaste! Main Nirmaan Life se Afrinbol rahi hoon, ek AI voice assistant. Kya main Amit ji se baat kar rahi hoon?",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 1,
+   "speaker": "customer",
+   "text": "Haan.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 2,
+   "speaker": "bot",
+   "text": "Amit ji, hamara Term Shield plan 18 se 60 saal ki age ke logon ke liye hai.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 3,
+   "speaker": "customer",
+   "text": "Premium kitna hoga? 50 lakh ke cover ke liye, main 30 saal ka hoon, smoke nahi karta.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 4,
+   "speaker": "bot",
+   "text": "Aapke liye 50 lakh ka cover sirf 349 rupaye mahine mein mil jayega, aur ye aapki age aur health par depend karta hai.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 5,
+   "speaker": "customer",
+   "text": "Medical test hoga kya?",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 6,
+   "speaker": "bot",
+   "text": "Medical test sirf 2 crore se upar ke cover par ya 55 saal se upar ki age par hota hai.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 7,
+   "speaker": "customer",
+   "text": "Achha.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 8,
+   "speaker": "bot",
+   "text": "Dhanyavaad.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  }
+ ],
+ "call_violations": [],
+ "elapsed_ms": 0.9
+}

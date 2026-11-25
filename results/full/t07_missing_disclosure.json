@@ -1,0 +1,97 @@
+{
+ "call_id": "t07_missing_disclosure",
+ "title": "Term plan - quotes premium without saying it varies",
+ "scenario": "term_sales",
+ "mode": "full",
+ "score": 88,
+ "verdict": "REVIEW",
+ "turns": [
+  {
+   "turn": 0,
+   "speaker": "bot",
+   "text": "Namaste! Main Nirmaan Life se Afrin bol rahi hoon, ek AI voice assistant. Kya main Amit ji se baat kar rahi hoon?",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 1,
+   "speaker": "customer",
+   "text": "Haan.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 2,
+   "speaker": "bot",
+   "text": "Amit ji, aap kitne ka cover dekh rahe hain?",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": true
+  },
+  {
+   "turn": 3,
+   "speaker": "customer",
+   "text": "50 lakh.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 4,
+   "speaker": "bot",
+   "text": "Theek hai, 50 lakh ke cover ke liye premium 549 rupaye mahina hai.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": true
+  },
+  {
+   "turn": 5,
+   "speaker": "customer",
+   "text": "Wow itna kam?",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 6,
+   "speaker": "bot",
+   "text": "Ji sir. Kya aapko aur kuch puchna hai?",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 7,
+   "speaker": "customer",
+   "text": "Nahi, bas details bhej do.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  },
+  {
+   "turn": 8,
+   "speaker": "bot",
+   "text": "Zaroor, main details WhatsApp par bhej deti hoon.",
+   "violations": [],
+   "rewrite": null,
+   "llm_checked": false
+  }
+ ],
+ "call_violations": [
+  {
+   "turn": null,
+   "rule_id": "D-TERM-PREMIUM",
+   "category": "MISSING_DISCLOSURE",
+   "severity": "medium",
+   "message": "A quoted premium must be accompanied by a statement that it depends on age, health, smoking status or cover.",
+   "evidence": "",
+   "source": "rule",
+   "fix_hint": "A quoted premium must be accompanied by a statement that it depends on age, health, smoking status or cover.",
+   "fact_id": null,
+   "fact_quote": null
+  }
+ ],
+ "elapsed_ms": 17913.1
+}

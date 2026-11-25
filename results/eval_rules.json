@@ -1,0 +1,102 @@
+{
+ "mode": "rules",
+ "model": null,
+ "calls": 16,
+ "planted_violations": 24,
+ "detected": 15,
+ "label_recall": 0.625,
+ "clean_bot_turns": 59,
+ "clean_turns_flagged": 0,
+ "clean_turn_fp_rate": 0.0,
+ "per_category": {
+  "AI_DISCLOSURE": {
+   "detected": 2,
+   "planted": 2
+  },
+  "GUARANTEE": {
+   "detected": 3,
+   "planted": 3
+  },
+  "URGENCY": {
+   "detected": 2,
+   "planted": 2
+  },
+  "PRESSURE": {
+   "detected": 2,
+   "planted": 2
+  },
+  "THREAT": {
+   "detected": 1,
+   "planted": 1
+  },
+  "PRIVACY": {
+   "detected": 2,
+   "planted": 2
+  },
+  "MISSING_DISCLOSURE": {
+   "detected": 2,
+   "planted": 2
+  },
+  "CALL_HOURS": {
+   "detected": 1,
+   "planted": 1
+  },
+  "FALSE_CLAIM": {
+   "detected": 0,
+   "planted": 3
+  },
+  "NUMBER_MISMATCH": {
+   "detected": 0,
+   "planted": 6
+  }
+ },
+ "missed": [
+  {
+   "call": "t02_guaranteed_returns",
+   "turn": 4,
+   "category": "FALSE_CLAIM"
+  },
+  {
+   "call": "t04_wrong_numbers",
+   "turn": 6,
+   "category": "NUMBER_MISMATCH"
+  },
+  {
+   "call": "t04_wrong_numbers",
+   "turn": 4,
+   "category": "NUMBER_MISMATCH"
+  },
+  {
+   "call": "t06_invented_benefit",
+   "turn": 6,
+   "category": "NUMBER_MISMATCH"
+  },
+  {
+   "call": "t06_invented_benefit",
+   "turn": 4,
+   "category": "FALSE_CLAIM"
+  },
+  {
+   "call": "l02_approval_promise",
+   "turn": 4,
+   "category": "FALSE_CLAIM"
+  },
+  {
+   "call": "l03_wrong_rate_fee",
+   "turn": 4,
+   "category": "NUMBER_MISMATCH"
+  },
+  {
+   "call": "c03_wrong_amount",
+   "turn": 6,
+   "category": "NUMBER_MISMATCH"
+  },
+  {
+   "call": "c03_wrong_amount",
+   "turn": 2,
+   "category": "NUMBER_MISMATCH"
+  }
+ ],
+ "false_positives": [],
+ "extra_flags_to_review": []
+}

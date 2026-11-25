@@ -1,0 +1,45 @@
+{
+ "mode": "rules",
+ "model": null,
+ "calls": 6,
+ "planted_violations": 4,
+ "detected": 0,
+ "label_recall": 0.0,
+ "clean_bot_turns": 27,
+ "clean_turns_flagged": 0,
+ "clean_turn_fp_rate": 0.0,
+ "per_category": {
+  "FALSE_CLAIM": {
+   "detected": 0,
+   "planted": 3
+  },
+  "NUMBER_MISMATCH": {
+   "detected": 0,
+   "planted": 1
+  }
+ },
+ "missed": [
+  {
+   "call": "h03_wrong_numbers",
+   "turn": 2,
+   "category": "NUMBER_MISMATCH"
+  },
+  {
+   "call": "h03_wrong_numbers",
+   "turn": 4,
+   "category": "FALSE_CLAIM"
+  },
+  {
+   "call": "h04_promise",
+   "turn": 4,
+   "category": "FALSE_CLAIM"
+  },
+  {
+   "call": "h05_threats",
+   "turn": 8,
+   "category": "FALSE_CLAIM"
+  }
+ ],
+ "false_positives": [],
+ "extra_flags_to_review": []
+}
