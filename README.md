@@ -1,5 +1,7 @@
 # 🛡️ Pitch Guard
 
+**Live demo:** https://your-app-name.streamlit.app
+
 **A compliance and fact-check guardrail for persuasive sales and collection voice bots.**
 It checks every sentence a bot is about to say (or has said) against an approved product sheet and a rulebook, in English, Hindi (Roman and Devanagari script) and Hinglish.
 
